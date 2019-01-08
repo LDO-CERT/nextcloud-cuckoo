@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>nextcloudcuckoo</id>
+    <name>Nextcloud Cuckoo</name>
+    <summary>nextcloud-cuckoo</summary>
+    <description><![CDATA[cuckoo integration for nextcloud]]></description>
+    <version>0.0.1</version>
+    <licence>agpl</licence>
+    <author mail="luca.memini@leonardocompany.com" homepage="https://github.com/LDO-CERT">Luca Memini</author>
+    <namespace>NextcloudCuckoo</namespace>
+    <category>security</category>
+    <bugs>https://github.com/LDO-CERT/nextcloud-cuckoo/issues</bugs>
+    <dependencies>
+        <nextcloud min-version="14" max-version="14"/>
+    </dependencies>
+    <navigations>
+        <navigation>
+            <name>Nextcloud Cuckoo</name>
+            <route>nextcloudcuckoo.page.index</route>
+        </navigation>
+    </navigations>
+</info>
