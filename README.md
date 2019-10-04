@@ -12,7 +12,7 @@ Installation
 Place this app in **nextcloud/apps/cuckoo** and then in you NC instance, simply navigate to »Apps«, choose the category »security«,
 find the cuckoo app and enable it.
 
-Remember (for now) to configure two variable with nextcloud ip/url
+Remember (for now) to configure two variable with sandbox ip/url
 
 Under file: lib/Controller/CuckooController.php var name $cuckoo_api_url
 
