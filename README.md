@@ -1,52 +1,30 @@
-# Nextcloud Cuckoo
-Place this app in **nextcloud/apps/**
+Cuckoo4nextcloud
+========
 
-## Building the app
-
-The app can be built by using the provided Makefile by running:
-
-    make
-
-This requires the following things to be present:
-* make
-* which
-* tar: for building the archive
-* curl: used if phpunit and composer are not installed to fetch them from the web
-* npm: for building and testing everything JS, only required if a package.json is placed inside the **js/** folder
-
-The make command will install or update Composer dependencies if a composer.json is present and also **npm run build** if a package.json is present in the **js/** folder. The npm **build** script should use local paths for build systems and package managers, so people that simply want to build the app won't need to install npm libraries globally, e.g.:
-
-**package.json**:
-```json
-"scripts": {
-    "test": "node node_modules/gulp-cli/bin/gulp.js karma",
-    "prebuild": "npm install && node_modules/bower/bin/bower install && node_modules/bower/bin/bower update",
-    "build": "node node_modules/gulp-cli/bin/gulp.js"
-}
-```
+**Plugin for [Nextcloud](https://nextcloud.com) for send files to cuckoo sandbox.**
 
 
-## Publish to App Store
+Installation
+------------
 
-First get an account for the [App Store](http://apps.nextcloud.com/) then run:
+**Nextcloud**
 
-    make && make appstore
+Place this app in **nextcloud/apps/cuckoo** and then in you NC instance, simply navigate to »Apps«, choose the category »security«,
+find the cuckoo app and enable it.
 
-The archive is located in build/artifacts/appstore and can then be uploaded to the App Store.
+Remember (for now) to configure two variable with nextcloud ip/url
 
-## Running tests
-You can use the provided Makefile to run all tests by using:
+Under file: lib/Controller/CuckooController.php var name $cuckoo_api_url
 
-    make test
+Under file: js/cuckoo.tabview.js var name sandbox_http_url
 
-This will run the PHP unit and integration tests and if a package.json is present in the **js/** folder will execute **npm run test**
 
-Of course you can also install [PHPUnit](http://phpunit.de/getting-started.html) and use the configurations directly:
+Usage
+-----
 
-    phpunit -c phpunit.xml
+Just open the details view of the file (Sidebar). There should be a new tab called "Cuckoo" with button for send it to sandbox
 
-or:
+Compatibility
+-------------
 
-    phpunit -c phpunit.integration.xml
-
-for integration tests
+- This is a "quick&dirty" apps, I need time to improve code...  ;-)

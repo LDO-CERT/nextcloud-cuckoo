@@ -1,15 +1,8 @@
 <?php
 /**
- * Create your routes in here. The name is the lowercase name of the controller
- * without the controller part, the stuff after the hash is the method.
- * e.g. page#index -> OCA\NextcloudCuckoo\Controller\PageController->index()
- *
- * The controller class has to be registered in the application.php file since
- * it's instantiated in there
+ * adding route for ajax callback
  */
-return [
-    'routes' => [
-	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
-	   ['name' => 'page#do_echo', 'url' => '/echo', 'verb' => 'POST'],
-    ]
-];
+return ['routes' => [
+    ['name' => 'cuckoo#check', 'url' => '/check', 'verb' => 'GET'],
+    ['name' => 'cuckoo#send', 'url' => '/send', 'verb' => 'GET']
+]];
